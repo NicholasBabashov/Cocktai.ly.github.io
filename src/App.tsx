@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, Container, Paper, Typography } from "@mui/material";
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://docs.google.com/document/d/1zVr1SbByq11mrcQ_i__WMcCdwefm-jU8S56c3fTvHFs/edit#heading=h.vm051rmyhoww"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <html>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Rye"
+        />
+      </head>
+      <body>
+        <Container maxWidth="sm">
+          <Box sx={{ my: 4 }}>
+            <Typography
+              variant="h3"
+              component="h1"
+              gutterBottom
+              sx={{ fontFamily: "Rye", textAlign: "center" }}
+            >
+              Cocktai.ly
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: 512,
+              height: 512,
+              margin: "auto",
+              bgcolor: "#ece6f0",
+              borderRadius: "15px",
+            }}
+          >
+            <Paper elevation={3} />
+          </Box>
+        </Container>
+      </body>
+    </html>
   );
 }
 
