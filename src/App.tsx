@@ -1,5 +1,13 @@
-import { Box, Container, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
+import { ProofCalculator } from "./ProofCalculator";
 
 function App() {
   return (
@@ -9,36 +17,39 @@ function App() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Rye"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto"
+        />
       </head>
       <body>
-        <Container maxWidth="sm">
-          <Box sx={{ my: 4 }}>
+        <Stack direction="row">
+          <Box sx={{ width: "70%" }}>
             <Typography
               variant="h3"
               component="h1"
               gutterBottom
               sx={{ fontFamily: "Rye", textAlign: "center" }}
             >
+              <br/>
               Cocktai.ly
             </Typography>
           </Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              width: 512,
-              height: 512,
-              margin: "auto",
-              bgcolor: "#ece6f0",
-              borderRadius: "15px",
-            }}
-          >
-            <Paper elevation={3} />
+          <Box sx={{ width: "30%", padding: "calc(50vh - 360px)" }}>
+            <Typography
+              variant="h4"
+              component="h2"
+              sx={{ fontFamily: "Roboto", textAlign: "center" }}
+            >
+              Proof Calculator
+              <Divider variant="middle" />
+              <br />
+            </Typography>
+            <ProofCalculator />
           </Box>
-        </Container>
+        </Stack>
       </body>
     </html>
   );
 }
-
 export default App;
