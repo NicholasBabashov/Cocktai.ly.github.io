@@ -1,8 +1,12 @@
+import * as React from 'react';
 import react, { useState } from "react";
 import { Paper, Typography, Stack, Box, Button } from "@mui/material";
 import { Ingredient } from "./Ingredient";
 import { Size } from "./Size";
 import { ABV } from "./ABV";
+import { Gender } from "./Gender";
+//import { DeleteIcon } from '@mui/icons-material/Delete';
+
 
 export const ProofCalculator = () => {
   const [componentsList, setComponentsList] = useState([{ id: Date.now() }]);
@@ -10,6 +14,9 @@ export const ProofCalculator = () => {
   const addComponentRow = () => {
   setComponentsList([...componentsList, { id: Date.now() }]);
   };
+  const deleteComponentRow = (id: number) => {
+    setComponentsList((prev) => prev.filter(row => row.id !== id));
+  }
 
   return (
     <Box>
@@ -36,12 +43,15 @@ export const ProofCalculator = () => {
         >
           <br />
           Component Drinks
-          <Stack sx={{ padding: 2 }}>
+          <Stack spacing={1} sx={{padding: 2 }}>
             {componentsList.map((item) => (
               <Stack direction="row" spacing={1} key={item.id}>
                 <Ingredient />
                 <Size />
                 <ABV />
+                <Button variant="contained" onClick={() => deleteComponentRow(item.id)}>
+                -
+                </Button>
               </Stack>
             ))}
           </Stack>
@@ -59,12 +69,19 @@ export const ProofCalculator = () => {
           flexWrap: "wrap",
           width: 400,
           height: 256,
+          overflowY: "auto",
           margin: "auto",
           bgcolor: "#ece6f0",
           borderRadius: "15px",
           marginTop: "50px",
+          marginBottom: "50px",
+          
         }}
       >
+        <br />
+        <Stack direction = "row" spacing = {1}>
+          <Gender/>
+        </Stack>
         <Stack direction="row">
           <Box sx={{ width: "50%" }}>
             <Typography
