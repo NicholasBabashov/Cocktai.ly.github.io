@@ -29,7 +29,7 @@ export const Ingredient = () => {
       label="Select"
       variant="outlined"
       defaultValue="Beer"
-      helperText="Please select a type of alcohol"
+      helperText="Enter type of alcohol"
       sx={{
         width: "30%",
         padding: "calc(50vh - 360px)",

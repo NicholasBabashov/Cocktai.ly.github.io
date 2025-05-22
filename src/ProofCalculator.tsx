@@ -1,11 +1,12 @@
 import * as React from 'react';
 import react, { useState } from "react";
-import { Paper, Typography, Stack, Box, Button } from "@mui/material";
+import { Paper, Typography, Stack, Box, Button, IconButton } from "@mui/material";
 import { Ingredient } from "./Ingredient";
 import { Size } from "./Size";
 import { ABV } from "./ABV";
 import { Gender } from "./Gender";
-//import { DeleteIcon } from '@mui/icons-material/Delete';
+import { Weight } from "./Weight";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export const ProofCalculator = () => {
@@ -43,24 +44,24 @@ export const ProofCalculator = () => {
         >
           <br />
           Component Drinks
-          <Stack spacing={1} sx={{padding: 2 }}>
+          <Stack spacing={1} sx={{ mt: 2, mb: 2 }} >
             {componentsList.map((item) => (
               <Stack direction="row" spacing={1} key={item.id}>
                 <Ingredient />
                 <Size />
                 <ABV />
-                <Button variant="contained" onClick={() => deleteComponentRow(item.id)}>
-                -
-                </Button>
+                <IconButton onClick={() => deleteComponentRow(item.id)}>
+                <DeleteIcon/>
+                </IconButton>
               </Stack>
             ))}
           </Stack>
 
           <Box textAlign="center">
-          <Button variant="contained" onClick={addComponentRow}>
+          <Button variant="contained" onClick={addComponentRow} sx={{ mt: 2, mb: 2 }}>
           +
           </Button>
-</Box>
+          </Box>
         </Typography>
       </Paper>
       <Paper
@@ -78,9 +79,21 @@ export const ProofCalculator = () => {
           
         }}
       >
-        <br />
-        <Stack direction = "row" spacing = {1}>
-          <Gender/>
+        <Typography
+              variant="h5"
+              component="h4"
+              sx={{
+                fontFamily: "Roboto",
+                textAlign: "center",
+                textDecoration: "underline",
+              }}
+            >
+              <br />
+              Personal Information
+              <br />
+        </Typography>
+        <Stack direction = "row" spacing = {1} sx={{padding: 2 }}>
+          <Gender/> <Weight/>
         </Stack>
         <Stack direction="row">
           <Box sx={{ width: "50%" }}>

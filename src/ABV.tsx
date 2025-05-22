@@ -53,7 +53,7 @@ export const ABV = () => {
       label="Select"
       variant="outlined"
       defaultValue="12%"
-      helperText="Please select the ABV"
+      helperText="Enter the ABV"
       sx={{
         width: "30%",
         padding: "calc(50vh - 360px)",

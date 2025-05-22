@@ -7,17 +7,17 @@ import {
   FormControl,
 } from "@mui/material";
 
-export const Size = () => {
-  const [size, setSize] = useState("");
-  const [unit, setUnit] = useState("oz");
+export const Weight = () => {
+  const [weight, setWeight] = useState("");
+  const [unit, setUnit] = useState("lbs");
 
   return (
     <TextField
-      label="Size"
-      type="Number"
-      value={size}
-      onChange={(e) => setSize(e.target.value)}
-      helperText="Enter Amount of said Measurment"
+      label="Weight"
+      type="number"
+      value={weight}
+      onChange={(e) => setWeight(e.target.value)}
+      helperText="Enter your weight"
       sx={{ width: "50%" }}
       InputProps={{
         endAdornment: (
@@ -27,8 +27,8 @@ export const Size = () => {
                 value={unit}
                 onChange={(e) => setUnit(e.target.value)}
               >
-                <MenuItem value="ml">ml</MenuItem>
-                <MenuItem value="oz">oz</MenuItem>
+                <MenuItem value="kg">kg</MenuItem>
+                <MenuItem value="lbs">lbs</MenuItem>
               </Select>
             </FormControl>
           </InputAdornment>

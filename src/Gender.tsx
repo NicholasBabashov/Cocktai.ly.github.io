@@ -21,9 +21,9 @@ export const Gender = () => {
       label="Select"
       variant="outlined"
       defaultValue="Male"
-      helperText="Please select a Gender"
+      helperText="Enter a Gender"
       sx={{
-        width: "30%",
+        width: "50%",
         padding: "calc(50vh - 360px)",
       }}
     >
